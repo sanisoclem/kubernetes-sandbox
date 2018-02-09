@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-export CLUSTER_NAME=sanisoclem-04
+export CLUSTER_NAME=sanisoclem-05
 export BUCKET_NAME=${CLUSTER_NAME}-k8s-state-store
 export KOPS_STATE_STORE=s3://$BUCKET_NAME
 export NAME=${CLUSTER_NAME}.k8s.local
@@ -29,6 +29,7 @@ aws s3api create-bucket --bucket "$BUCKET_NAME" --region ap-southeast-1 --create
 
 # create dashboard
 #kubectl create -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/kubernetes-dashboard/v1.8.1.yaml
+#kubectl create -f https://raw.githubusercontent.com/kubernetes/kops/master/addons/monitoring-standalone/v1.7.0.yaml
 
-// gets user password
+# gets user password
 #kops get secrets kube --type secret -oplaintext
